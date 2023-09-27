@@ -1,0 +1,20 @@
+try:
+    hours = float(input("Enter the number of hours worked: "))
+    rate = float(input("Enter the hourly rate: "))
+    
+if hours < 0 or rate < 0:
+        raise ValueError("Hours and rate must be positive values.")
+
+if hours > 40:
+        salary = 40 * rate + (hours - 40) * rate * 1.5
+    else:
+        salary = hours * rate
+
+    print(f"Salary: ${salary:.2f}")
+
+except ValueError as e:
+    print(f"Error: {e}")
+except KeyboardInterrupt:
+print("Program terminated by the user.")
+except Exception as e:
+    print(f"An error occurred: {e}")
